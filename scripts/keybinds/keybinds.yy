@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Rastenchine++",
-    "path": "Rastenchine++.yyp",
+    "name": "RastenchineRevamp",
+    "path": "RastenchineRevamp.yyp",
   },
 }
