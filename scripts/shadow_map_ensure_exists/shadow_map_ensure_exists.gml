@@ -24,7 +24,7 @@ function shadow_map_ensure_exists(argument0) {
 		}
 	
 		// Create the surface
-		shadowMap = surface_create(vw, vh);
+		shadowMap = surface_create(vw, vh, surface_rgba16float);
 	
 		// Reassign it
 		switch(shadowMapType) {

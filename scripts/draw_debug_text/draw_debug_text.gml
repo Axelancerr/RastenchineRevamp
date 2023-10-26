@@ -2,8 +2,11 @@ function draw_debug_text() {
 	draw_set_font(fnt_game)
 	bottom_left_text()
 
-	var names = "Window size: \nGUI size: \nCamera Size: \nView Size: "
-	var values = $"{window_width()}x{window_height()}\n" + 
+	var names = "FPS: \nDisplay: \nWindow: \nSurface: \nGUI: \nCamera: \nView: "
+	var values = $"{fps}\n" +
+				 $"{display_width()}x{display_height()}\n" +
+				 $"{window_width()}x{window_height()}\n" + 
+				 $"{surface_get_width(application_surface)}x{surface_get_height(application_surface)}\n" +
 				 $"{gui_width()}x{gui_height()}\n" + 
 				 $"{camera_width()}x{camera_height()}\n" + 
 				 $"{view_width()}x{view_height()}"

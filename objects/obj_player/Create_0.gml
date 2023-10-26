@@ -29,13 +29,14 @@ walk_sprites = [
 
 area_light = instance_create_layer(_x, _y, layer, obj_area_light) 
 flash_light = instance_create_layer(_x, _y, layer, obj_flash_light)
+camera = instance_create_layer(_x, _y, layer, obj_camera)
 
 #region States
 state.add(
 	"idle",
 	{
 		step: function() {
-			stamina = min(PLAYER_STAMINA_MAXIMUM, stamina + PLAYER_IDLE_STAMINA_GAIN_PER_FRAME)
+			stamina = min(PLAYER_STAMINA_MAXIMUM, stamina + d(PLAYER_IDLE_STAMINA_GAIN_PER_FRAME))
 			_speed = lerp(_speed, PLAYER_IDLE_SPEED, LERP_PERCENT)
 			state.trigger("walk")
 			state.trigger("run")
@@ -48,7 +49,7 @@ state.add(
 	"walking",
 	{
 		step: function() {
-			stamina = min(PLAYER_STAMINA_MAXIMUM, stamina + PLAYER_WALK_STAMINA_GAIN_PER_FRAME)
+			stamina = min(PLAYER_STAMINA_MAXIMUM, stamina + d(PLAYER_WALK_STAMINA_GAIN_PER_FRAME))
 			_speed = lerp(_speed, PLAYER_WALK_SPEED, LERP_PERCENT)
 			state.trigger("idle")
 			state.trigger("run")
@@ -61,7 +62,7 @@ state.add(
 	"running",
 	{
 		step: function() {
-			stamina = max(PLAYER_STAMINA_MINIMUM, stamina - PLAYER_RUN_STAMINA_COST_PER_FRAME)
+			stamina = max(PLAYER_STAMINA_MINIMUM, stamina - d(PLAYER_RUN_STAMINA_COST_PER_FRAME))
 			_speed = lerp(_speed, PLAYER_RUN_SPEED, LERP_PERCENT)
 			state.trigger("idle")
 			state.trigger("walk")
@@ -74,7 +75,7 @@ state.add(
 	"dodging",
 	{
 		enter: function() {
-			stamina = max(PLAYER_STAMINA_MINIMUM, stamina - PLAYER_DODGE_STAMINA_COST)
+			stamina = max(PLAYER_STAMINA_MINIMUM, stamina - d(PLAYER_DODGE_STAMINA_COST))
 			_speed = PLAYER_DODGE_SPEED
 		},
 		step: function() {
@@ -87,7 +88,7 @@ state.add(
 					sprite_index: sprite_index
 				}
 			)
-			if (state.get_time(false) >= PLAYER_DODGE_LENGTH_FRAMES) { 
+			if (d(state.get_time(false)) >= PLAYER_DODGE_LENGTH_FRAMES) { 
 				state.trigger("idle")
 				state.trigger("walk")
 				state.trigger("run")
@@ -100,7 +101,7 @@ state.add(
 	"exhausted",
 	{
 		step: function() {
-			stamina = min(PLAYER_STAMINA_MAXIMUM, stamina + PLAYER_EXHAUSTED_STAMINA_GAIN_PER_FRAME)
+			stamina = min(PLAYER_STAMINA_MAXIMUM, stamina + d(PLAYER_EXHAUSTED_STAMINA_GAIN_PER_FRAME))
 			_speed = lerp(
 				_speed, 
 				(inputs.walk == true) ? PLAYER_EXHAUSTED_SPEED : PLAYER_IDLE_SPEED, 

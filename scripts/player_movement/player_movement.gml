@@ -1,6 +1,6 @@
 function move_player() {
-	var move_x_distance = lengthdir_x(_speed, move_direction)
-	var move_y_distance = lengthdir_y(_speed, move_direction)
+	var move_x_distance = lengthdir_x(d(_speed), move_direction)
+	var move_y_distance = lengthdir_y(d(_speed), move_direction)
 	
 	if (place_meeting(x + move_x_distance, y, obj_player_collision)) {
 		while (not place_meeting(x + sign(move_x_distance), y, obj_player_collision)) {

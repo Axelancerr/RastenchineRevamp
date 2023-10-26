@@ -1,4 +1,7 @@
 #region Width / Height
+function display_width() { return display_get_width() }
+function display_height() { return display_get_height() }
+
 function window_width() { return window_get_width() }
 function window_height() { return window_get_height() }
 

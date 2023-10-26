@@ -15,5 +15,5 @@ function animate_player() {
 		else if (is_down) { sprite_index = spr_player_idle_down }
 		else if (is_right) { sprite_index = spr_player_idle_right }
 	}
-	image_speed = _speed
+	image_speed = d(_speed)
 }

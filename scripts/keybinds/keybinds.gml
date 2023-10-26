@@ -7,3 +7,8 @@ global.DODGE_KEY = vk_space
 
 global.ZOOM_OUT_KEY = vk_pageup
 global.ZOOM_IN_KEY = vk_pagedown
+
+global.PAUSE_KEY = vk_escape
+
+global.CYCLE_SCALE_KEY = vk_f10
+global.TOGGLE_FULLSCREEN_KEY = vk_f11
