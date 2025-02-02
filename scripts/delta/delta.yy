@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "delta",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Delta Time",
-    "path": "folders/INTERNALS/Delta Time.yy",
+  "$GMScript":"v1",
+  "%Name":"delta",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"delta",
+  "parent":{
+    "name":"Delta Time",
+    "path":"folders/INTERNALS/Delta Time.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

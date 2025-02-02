@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "keybinds",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "RastenchineRevamp",
-    "path": "RastenchineRevamp.yyp",
+  "$GMScript":"v1",
+  "%Name":"keybinds",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"keybinds",
+  "parent":{
+    "name":"RastenchineRevamp",
+    "path":"RastenchineRevamp.yyp",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
